@@ -4253,7 +4253,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
     .navbar-header {
         float: left;
-        color: #3f3b60;
     }
 }
 .navbar-collapse {

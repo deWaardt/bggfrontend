@@ -144,7 +144,6 @@ C:\Users\kaygi\Documents\GitHub\bggfrontend\BBGFrontEnd\BBGFrontEnd\bin\System.W
 C:\Users\kaygi\Documents\GitHub\bggfrontend\BBGFrontEnd\BBGFrontEnd\bin\Newtonsoft.Json.xml
 C:\Users\kaygi\Documents\GitHub\bggfrontend\BBGFrontEnd\BBGFrontEnd\bin\Antlr3.Runtime.pdb
 C:\Users\kaygi\Documents\GitHub\bggfrontend\BBGFrontEnd\BBGFrontEnd\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\kaygi\Documents\GitHub\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.csprojAssemblyReference.cache
 C:\Users\kaygi\Documents\GitHub\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.csproj.CopyComplete
 C:\Users\kaygi\Documents\GitHub\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.dll
 C:\Users\kaygi\Documents\GitHub\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.pdb
