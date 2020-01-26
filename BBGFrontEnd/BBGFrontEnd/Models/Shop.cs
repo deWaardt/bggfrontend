@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace BBGFrontEnd.Models
 {
@@ -16,5 +17,10 @@ namespace BBGFrontEnd.Models
         public DateTime OpenTime { get; set; }
         public DateTime CloseTime { get; set; }
         public List<bool> OpenDays { get; set; } // Lijst met 7 elementen die staan voor de dagen van de week.
+    }
+
+    public class ShopDBContext : DbContext
+    {
+        public DbSet<Shop> Shops { get; set; }
     }
 }
