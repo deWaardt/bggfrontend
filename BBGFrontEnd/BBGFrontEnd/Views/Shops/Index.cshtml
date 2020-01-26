@@ -1,69 +1,52 @@
 ﻿@model IEnumerable<BBGFrontEnd.Models.Shop>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Shops";
 }
 
-<h2>Index</h2>
+<h2>Boardgame Shops</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OpenTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CloseTime)
-        </th>
-        <th></th>
-    </tr>
+
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
+
+<div class="card text-white bg-dark col-sm-4">
+    <img style="height: 250px;" class="card-img-top img-responsive" src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Card image cap">
+    <div class="card-body">
+        <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
+        <p class="card-text">
             @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OpenTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CloseTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+        </p>
+
+        <table class="table">
+            <tr>
+                <td><span class="glyphicon glyphicon-time"></span></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpenTime) - @Html.DisplayFor(modelItem => item.CloseTime)
+                </td>
+            </tr>
+            <tr>
+                <td><span class="glyphicon glyphicon-phone"></span></td>
+                <td>
+                    (+31) 0 @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+            </tr>
+            <tr>
+                <td><span class="glyphicon glyphicon-home"></span></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address), @Html.DisplayFor(modelItem => item.Location)
+                </td>
+            </tr>
+            <tr>
+                <td><span class="glyphicon glyphicon-link"></span></td>
+                <td>
+                    <a href="@Html.DisplayFor(modelItem => item.WebsiteUrl)">Bezoek de website</a>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
 }
 
-</table>

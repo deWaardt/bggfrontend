@@ -4,7 +4,9 @@
     "\\BBGFrontEnd",
     "\\BBGFrontEnd\\BBGFrontEnd",
     "\\BBGFrontEnd\\BBGFrontEnd\\Controllers",
-    "\\BBGFrontEnd\\BBGFrontEnd\\Models"
+    "\\BBGFrontEnd\\BBGFrontEnd\\Models",
+    "\\BBGFrontEnd\\BBGFrontEnd\\Views",
+    "\\BBGFrontEnd\\BBGFrontEnd\\Views\\Shops"
   ],
   "SelectedNode": "\\BBGFrontEnd\\BBGFrontEnd.sln",
   "PreviewInSolutionExplorer": false

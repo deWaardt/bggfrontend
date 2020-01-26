@@ -154,3 +154,5 @@ C:\Users\Ezel\Source\Repos\deWaardt\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debu
 C:\Users\Ezel\Source\Repos\deWaardt\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.pdb
 C:\Users\Ezel\Source\Repos\deWaardt\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.Migrations.Initial.resources
 C:\Users\Ezel\Source\Repos\deWaardt\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.csproj.GenerateResource.cache
+C:\Users\Ezel\Source\Repos\deWaardt\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.Migrations.Url.resources
+C:\Users\Ezel\Source\Repos\deWaardt\bggfrontend\BBGFrontEnd\BBGFrontEnd\obj\Debug\BBGFrontEnd.Migrations.Seed.resources

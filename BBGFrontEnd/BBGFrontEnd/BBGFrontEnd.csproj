@@ -136,6 +136,14 @@
     <Compile Include="Migrations\202001261700440_Initial.designer.cs">
       <DependentUpon>202001261700440_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001261922452_Url.cs" />
+    <Compile Include="Migrations\202001261922452_Url.designer.cs">
+      <DependentUpon>202001261922452_Url.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001261956193_Seed.cs" />
+    <Compile Include="Migrations\202001261956193_Seed.designer.cs">
+      <DependentUpon>202001261956193_Seed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,6 +211,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001261700440_Initial.resx">
       <DependentUpon>202001261700440_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001261922452_Url.resx">
+      <DependentUpon>202001261922452_Url.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001261956193_Seed.resx">
+      <DependentUpon>202001261956193_Seed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
