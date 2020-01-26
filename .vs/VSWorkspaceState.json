@@ -3,6 +3,7 @@
     "",
     "\\BBGFrontEnd",
     "\\BBGFrontEnd\\BBGFrontEnd",
+    "\\BBGFrontEnd\\BBGFrontEnd\\Controllers",
     "\\BBGFrontEnd\\BBGFrontEnd\\Models"
   ],
   "SelectedNode": "\\BBGFrontEnd\\BBGFrontEnd.sln",
