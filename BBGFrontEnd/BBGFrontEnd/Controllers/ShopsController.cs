@@ -15,9 +15,24 @@ namespace BBGFrontEnd.Controllers
         private ShopDBContext db = new ShopDBContext();
 
         // GET: Shops
-        public ActionResult Index()
+        public ActionResult Index(string location)
         {
-            return View(db.Shops.ToList());
+            var LocationList = new List<string>();
+            var LocationQry = from d in db.Shops
+                              orderby d.Location
+                              select d.Location;
+
+            LocationList.AddRange(LocationQry.Distinct());
+            ViewBag.location = new SelectList(LocationList);
+
+            var shops = from s in db.Shops
+                           select s;
+
+            if (!string.IsNullOrEmpty(location))
+            {
+                shops = shops.Where(s => s.Location == location);
+            }
+            return View(shops);
         }
 
         // GET: Shops/Details/5
