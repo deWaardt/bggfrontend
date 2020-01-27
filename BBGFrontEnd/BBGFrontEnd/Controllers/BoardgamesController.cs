@@ -15,14 +15,9 @@ namespace BBGFrontEnd.Controllers
         private BoardgameDBContext db = new BoardgameDBContext();
 
         // GET: Boardgames
-        public ActionResult Index(GameCategory? category, int? players, int? age, int? playtime)
+        public ActionResult Index(int? players, int? age, int? playtime, string category = "")
         {
-            var CategoryList = new List<GameCategory>();
-            var CategoryQry = from c in db.Boardgames
-                              orderby c.Category
-                              select c.Category;
-            CategoryList.AddRange(CategoryQry.Distinct());
-
+            var CategoryList = db.Boardgames.Select(game => game.Category).Distinct();
             var PlayersList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             var AgeList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
             var PlaytimeList = new List<int> { 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240 };
@@ -32,10 +27,9 @@ namespace BBGFrontEnd.Controllers
             ViewBag.age = new SelectList(AgeList);
             ViewBag.playtime = new SelectList(PlaytimeList);
 
-            var games = from g in db.Boardgames
-                        select g;
+            var games = from g in db.Boardgames select g;
 
-            if (!String.IsNullOrEmpty(category.ToString()))
+            if (category != "")
             {
                 games = games.Where(s => s.Category == category);
             }

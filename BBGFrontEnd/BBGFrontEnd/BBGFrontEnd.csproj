@@ -148,6 +148,10 @@
     <Compile Include="Migrations\202001270003108_DummyData2.designer.cs">
       <DependentUpon>202001270003108_DummyData2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001271947394_CategoryUpdate.cs" />
+    <Compile Include="Migrations\202001271947394_CategoryUpdate.designer.cs">
+      <DependentUpon>202001271947394_CategoryUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Boardgame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -222,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001270003108_DummyData2.resx">
       <DependentUpon>202001270003108_DummyData2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271947394_CategoryUpdate.resx">
+      <DependentUpon>202001271947394_CategoryUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

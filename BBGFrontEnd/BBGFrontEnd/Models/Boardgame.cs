@@ -12,28 +12,13 @@ namespace BBGFrontEnd.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public GameCategory Category { get; set; }  // Lijst van categorie id's
+        public string Category { get; set; }  // Lijst van categorieën
         public int MinPlayers { get; set; }
         public int MaxPlayers { get; set; }
         public int MinPlayTime { get; set; }
         public int MaxPlayTime { get; set; }           // Speeltijd in minuten
         public int MinAge { get; set; }
         public string ThumbnailURL { get; set; }    // Url met verwijzing naar afbeelding van bordspel. Bron van internet of eigen cdn?
-    }
-
-    public enum GameCategory
-    {
-        Adventure,
-        Economic,
-        Fantasy,
-        RPG,
-        Strategy,
-        Cardgame,
-        Dice,
-        Party,
-        Memory,
-        Thematic,
-        Wargame
     }
 
     public class BoardgameDBContext : DbContext
