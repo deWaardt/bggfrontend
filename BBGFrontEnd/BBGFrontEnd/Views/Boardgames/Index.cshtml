@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BBGFrontEnd.Models.Boardgame>
+
+@{
+    ViewBag.Title = "Boardgames";
+}
+
+<h2>Boardgames</h2>
+
+
+@foreach (var item in Model)
+{
+    <div class="card col-sm-4">
+        <img style="height: 300px;" class="card-img-top img-responsive" src="@Html.DisplayFor(modelItem => item.ThumbnailURL)" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
+            <h6 class="card-subtitle mb-2 text-muted"> @Html.DisplayFor(modelItem => item.Category)</h6>
+            <p class="card-text">
+                @Html.DisplayFor(modelItem => item.Description)
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>
+                        <span class="glyphicon glyphicon-user"></span> @Html.DisplayFor(modelItem => item.MinPlayers) - @Html.DisplayFor(modelItem => item.MaxPlayers)
+                    </td>
+                    <td>
+                        <span class="glyphicon glyphicon-time"></span> @Html.DisplayFor(modelItem => item.MinPlayTime) - @Html.DisplayFor(modelItem => item.MaxPlayTime)
+                    </td>
+                    <td>
+                        <span class="glyphicon glyphicon-education"></span> @Html.DisplayFor(modelItem => item.MinAge)+
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+}
