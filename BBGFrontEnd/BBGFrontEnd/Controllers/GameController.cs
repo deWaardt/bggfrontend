@@ -58,7 +58,7 @@ namespace BBGFrontEnd.Controllers
                     }
                 }
             }
-            catch (Exception E) { throw new NotImplementedException(); }
+            catch (Exception E) { return null; }
 
             return View();
         }
