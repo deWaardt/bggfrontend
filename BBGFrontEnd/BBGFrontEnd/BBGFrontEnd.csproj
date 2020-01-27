@@ -224,6 +224,12 @@
       <DependentUpon>202001270003108_DummyData2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\vergelijkingssite-bordspellen\BGGConnectorLib\BGGConnectorLib.csproj">
+      <Project>{65c1b280-3b9d-4f2f-ab92-cafcbc03a2d0}</Project>
+      <Name>BGGConnectorLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

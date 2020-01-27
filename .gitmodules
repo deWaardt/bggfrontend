@@ -1,0 +1,4 @@
+[submodule "vergelijkingssite-bordspellen"]
+	path = vergelijkingssite-bordspellen
+	url = https://github.com/michelheusschen/vergelijkingssite-bordspellen.git
+	branch = master
