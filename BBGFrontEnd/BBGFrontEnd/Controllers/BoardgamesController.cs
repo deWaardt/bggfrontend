@@ -15,9 +15,47 @@ namespace BBGFrontEnd.Controllers
         private BoardgameDBContext db = new BoardgameDBContext();
 
         // GET: Boardgames
-        public ActionResult Index()
+        public ActionResult Index(GameCategory? category, int? players, int? age, int? playtime)
         {
-            return View(db.Boardgames.ToList());
+            var CategoryList = new List<GameCategory>();
+            var CategoryQry = from c in db.Boardgames
+                              orderby c.Category
+                              select c.Category;
+            CategoryList.AddRange(CategoryQry.Distinct());
+
+            var PlayersList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var AgeList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
+            var PlaytimeList = new List<int> { 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240 };
+
+            ViewBag.category = new SelectList(CategoryList);
+            ViewBag.players = new SelectList(PlayersList);
+            ViewBag.age = new SelectList(AgeList);
+            ViewBag.playtime = new SelectList(PlaytimeList);
+
+            var games = from g in db.Boardgames
+                        select g;
+
+            if (!String.IsNullOrEmpty(category.ToString()))
+            {
+                games = games.Where(s => s.Category == category);
+            }
+
+            if (players != null)
+            {
+                games = games.Where(s => s.MinPlayers <= players).Where(s => s.MaxPlayers >= players);
+            }
+
+            if (age != null)
+            {
+                games = games.Where(s => s.MinAge <= age);
+            }
+
+            if (playtime != null)
+            {
+                games = games.Where(s => s.MinPlayTime <= playtime).Where(s => s.MaxPlayTime >= playtime);
+            }
+
+            return View(games);
         }
 
         // GET: Boardgames/Details/5

@@ -5,10 +5,8 @@
     "\\BBGFrontEnd\\BBGFrontEnd",
     "\\BBGFrontEnd\\BBGFrontEnd\\Controllers",
     "\\BBGFrontEnd\\BBGFrontEnd\\Models",
-    "\\BBGFrontEnd\\BBGFrontEnd\\Views",
-    "\\BBGFrontEnd\\BBGFrontEnd\\Views\\Home",
-    "\\BBGFrontEnd\\BBGFrontEnd\\Views\\Shared"
+    "\\BBGFrontEnd\\BBGFrontEnd\\Views"
   ],
-  "SelectedNode": "\\BBGFrontEnd\\BBGFrontEnd\\BBGFrontEnd.csproj",
+  "SelectedNode": "\\BBGFrontEnd\\BBGFrontEnd.sln",
   "PreviewInSolutionExplorer": false
 }

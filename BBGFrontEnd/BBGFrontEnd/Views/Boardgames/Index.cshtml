@@ -6,18 +6,44 @@
 
 <h2>Boardgames</h2>
 
+@using (Html.BeginForm("Index", "Boardgames", FormMethod.Get))
+{
+
+
+    <div class="form-group form-check">
+        <input type="text" class="form-control">
+        <input type="checkbox" class="form-check-input">
+        <label class="form-check-label">Exact search</label>
+    </div>
+
+
+    <table style="margin: 22px 0;">
+
+        <tr>
+            <td style="padding-right: 12px;">@Html.DropDownList("category", null, "Category", new { @class = "form-control" })</td>
+            <td style="padding-right: 12px;">@Html.DropDownList("players", null, "Players", new { @class = "form-control" })</td>
+            <td style="padding-right: 12px;">@Html.DropDownList("age", null, "Age", new { @class = "form-control" })</td>
+            <td style="padding-right: 12px;">@Html.DropDownList("playtime", null, "Playtime", new { @class = "form-control" })</td>
+            <td><input type="submit" class="btn btn-primary" value="Search" /></td>
+        </tr>
+    </table>
+
+    <hr />
+}
 
 @foreach (var item in Model)
 {
     <div class="card col-sm-4">
         <img style="height: 300px;" class="card-img-top img-responsive" src="@Html.DisplayFor(modelItem => item.ThumbnailURL)" alt="Card image cap">
+
         <div class="card-body">
             <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
             <h6 class="card-subtitle mb-2 text-muted"> @Html.DisplayFor(modelItem => item.Category)</h6>
             <p class="card-text">
                 @Html.DisplayFor(modelItem => item.Description)
             </p>
-            <table class="table table-condensed">
+
+            <table class="table">
                 <tr>
                     <td>
                         <span class="glyphicon glyphicon-user"></span> @Html.DisplayFor(modelItem => item.MinPlayers) - @Html.DisplayFor(modelItem => item.MaxPlayers)
@@ -30,8 +56,8 @@
                     </td>
                 </tr>
             </table>
-
         </div>
+        <br />
     </div>
 
 
