@@ -4,31 +4,67 @@
     ViewBag.Title = "Boardgames";
 }
 
-<h2>Boardgames</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Index", "Boardgames", FormMethod.Get))
 {
+    <div class="row">
+        <div class="col-xs-6 col-md-4 search-input">
+            <div class="search-input-label">
+                <label for="query">Keyword</label>
+            </div>
+            <div class="search-input-body">
+                <input type="text" name="query" id="query" class="form-control" />
+            </div>
+        </div>
 
+        <div class="col-xs-6 col-md-4 search-input">
+            <div class="search-input-label">
+                <label for="players">Number of Players</label>
+            </div>
+            <div class="search-input-body">
+                @Html.DropDownList("players", null, "Players", new { @class = "form-control" })
+            </div>
+        </div>
 
-    <div class="form-group form-check">
-        <input type="text" class="form-control">
-        <input type="checkbox" class="form-check-input">
-        <label class="form-check-label">Exact search</label>
+        <div class="col-xs-6 col-md-4 search-input">
+            <div class="search-input-label">
+                <label for="category">Category</label>
+            </div>
+            <div class="search-input-body">
+                @Html.DropDownList("category", null, "Category", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-4 search-input">
+            <div class="search-input-label">
+                <label for="age">Age</label>
+            </div>
+            <div class="search-input-body">
+                @Html.DropDownList("age", null, "Age", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-4 search-input">
+            <div class="search-input-label">
+                <label for="playtime">Play Time</label>
+            </div>
+            <div class="search-input-body">
+                @Html.DropDownList("playtime", null, "Playtime", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-4 search-input text-center">
+            <input type="submit" class="btn btn-dark-blue btn-wide" value="Search" />
+
+            <div class="checkbox">
+                <label class="form-check-label" for="exact">
+                    <input id="exact" name="exact" type="checkbox" class="form-check-input">
+                    Exact search
+                </label>
+            </div>
+        </div>
     </div>
-
-
-    <table style="margin: 22px 0;">
-
-        <tr>
-            <td style="padding-right: 12px;">@Html.DropDownList("category", null, "Category", new { @class = "form-control" })</td>
-            <td style="padding-right: 12px;">@Html.DropDownList("players", null, "Players", new { @class = "form-control" })</td>
-            <td style="padding-right: 12px;">@Html.DropDownList("age", null, "Age", new { @class = "form-control" })</td>
-            <td style="padding-right: 12px;">@Html.DropDownList("playtime", null, "Playtime", new { @class = "form-control" })</td>
-            <td><input type="submit" class="btn btn-primary" value="Search" /></td>
-        </tr>
-    </table>
-
-    <hr />
 }
 
 @foreach (var item in Model)

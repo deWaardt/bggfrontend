@@ -3,12 +3,6 @@
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -16,9 +10,52 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+/* Center image in navbar-brand */
+.navbar-brand {
+    padding: 10px 15px;
+}
+
+/* Add custom color for navbar */
+.navbar-dark-blue {
+    background-color: #3f3b60;
+    border-color: #080808;
+}
+.navbar-dark-blue .navbar-brand,
+.navbar-dark-blue .navbar-nav > li > a {
+    color: #ccc;
+}
+
+/* Styles for search input boxes */
+.search-input {
+    margin: 15px 0;
+}
+.search-input-label {
+    border-radius: 4px 4px 0 0;
+    padding: 4px 10px;
+    background-color: #FE5401;
+    color: #fff;
+}
+.search-input-label label {
+    margin: 0;
+}
+.search-input-body {
+    border-radius: 0 0 4px 4px;
+    background-color: #9EEBFF;
+    padding: 5px 10px;
+}
+
+/* Custom style for buttons */
+.btn-dark-blue {
+    color: #fff;
+    background-color: #3f3b60;
+    border-color: #3f3b60;
+}
+.btn-dark-blue:hover {
+    color: #fff;
+    background-color: #322f4c;
+    border-color: #322f4c;
+}
+.btn-wide {
+    padding: 6px 35px;
+    font-size: 18px;
 }
