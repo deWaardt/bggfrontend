@@ -15,20 +15,33 @@ namespace BBGFrontEnd.Controllers
         private BoardgameDBContext db = new BoardgameDBContext();
 
         // GET: Boardgames
-        public ActionResult Index(int? players, int? age, int? playtime, string category = "")
+        public ActionResult Index(int? players, int? age, int? playtime, bool? exact, string category = "", string query = "")
         {
             var CategoryList = db.Boardgames.Select(game => game.Category).Distinct();
-            var PlayersList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            var AgeList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
-            var PlaytimeList = new List<int> { 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240 };
+            var PlayersList = db.Boardgames.SelectMany(game => new int[] { game.MinPlayers, game.MaxPlayers }).Distinct();
+            var AgeList = db.Boardgames.Select(game => game.MinAge).Distinct();
+            var PlaytimeList = db.Boardgames.SelectMany(game => new int[] { game.MinPlayTime, game.MaxPlayTime }).Distinct();
 
             ViewBag.category = new SelectList(CategoryList);
             ViewBag.players = new SelectList(PlayersList);
             ViewBag.age = new SelectList(AgeList);
             ViewBag.playtime = new SelectList(PlaytimeList);
+            ViewBag.exact = exact;
+            ViewBag.query = query;
 
             var games = from g in db.Boardgames select g;
 
+            if (query != "")
+            {
+                if (exact == true)
+                {
+                    games = games.Where(game => game.Name == query);
+                }
+                else
+                {
+                    games = games.Where(game => game.Name.Contains(query));
+                }
+            }
             if (category != "")
             {
                 games = games.Where(s => s.Category == category);
