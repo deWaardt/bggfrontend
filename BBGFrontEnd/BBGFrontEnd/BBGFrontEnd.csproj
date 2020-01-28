@@ -128,7 +128,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BoardgamesController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShopsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +156,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Boardgame.cs" />
+    <Compile Include="Models\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +200,12 @@
     <Content Include="Views\Boardgames\Details.cshtml" />
     <Content Include="Views\Boardgames\Edit.cshtml" />
     <Content Include="Views\Boardgames\Index.cshtml" />
+    <Content Include="Views\Game\GamePage.cshtml" />
+    <Content Include="Views\Shops\Create.cshtml" />
+    <Content Include="Views\Shops\Delete.cshtml" />
+    <Content Include="Views\Shops\Details.cshtml" />
+    <Content Include="Views\Shops\Edit.cshtml" />
+    <Content Include="Views\Shops\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -232,8 +241,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\vergelijkingssite-bordspellen\BGGConnectorLib\BGGConnectorLib.csproj">
-      <Project>{65c1b280-3b9d-4f2f-ab92-cafcbc03a2d0}</Project>
+    <ProjectReference Include="..\BGGConnectorLib\BGGConnectorLib.csproj">
+      <Project>{5d3091eb-7d33-4d69-ab48-90b0bae523ba}</Project>
       <Name>BGGConnectorLib</Name>
     </ProjectReference>
   </ItemGroup>

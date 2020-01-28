@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BBGFrontEnd.Models.Shop>
+
+@{
+    ViewBag.Title = "Shops";
+}
+
+<h2>Boardgame Shops</h2>
+
+@using (Html.BeginForm("Index", "Shops", FormMethod.Get))
+{
+    <table style="margin: 22px 0;">
+        <tr>
+            <td>Location: </td>
+        </tr>
+        <tr>
+            <td>@Html.DropDownList("location", null, "All", new { @class = "form-control" })</td>
+            <td><input type="submit" class="btn btn-primary" value="Filter" /></td>
+        </tr>
+    </table>
+    <hr />
+}
+
+
+@foreach (var item in Model)
+{
+
+    <div class="card text-white bg-dark col-sm-4">
+        <img style="height: 250px;" class="card-img-top img-responsive" src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
+            <p class="card-text">
+                @Html.DisplayFor(modelItem => item.Description)
+            </p>
+
+            <table class="table">
+                <tr>
+                    <td><span class="glyphicon glyphicon-time"></span></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OpenTime) - @Html.DisplayFor(modelItem => item.CloseTime)
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-phone"></span></td>
+                    <td>
+                        (+31) 0 @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-home"></span></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address), @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-link"></span></td>
+                    <td>
+                        <a href="@Html.DisplayFor(modelItem => item.WebsiteUrl)">Bezoek de website</a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+}
+
