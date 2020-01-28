@@ -50,7 +50,7 @@
     background-color: #3f3b60;
     border-color: #3f3b60;
 }
-.btn-dark-blue:hover {
+.btn-dark-blue:hover, .btn-dark-blue:focus {
     color: #fff;
     background-color: #322f4c;
     border-color: #322f4c;
@@ -58,4 +58,54 @@
 .btn-wide {
     padding: 6px 35px;
     font-size: 18px;
+}
+
+/* Use card from Bootstrap 4.4 */
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+.card-title {
+    margin-bottom: 0.75rem;
+}
+.card-text:last-child {
+    margin-bottom: 0;
+}
+.card-img,
+.card-img-top,
+.card-img-bottom {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+}
+.card-img,
+.card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+/* Custom card classes */
+.card-details {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+.card-image-300px {
+    height: 300px;
+    object-fit: cover;
 }

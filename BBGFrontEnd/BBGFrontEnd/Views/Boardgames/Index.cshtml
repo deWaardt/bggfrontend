@@ -4,6 +4,16 @@
     ViewBag.Title = "Boardgames";
 }
 
+@helper Truncate(string value, int maxLength)
+{
+    if (value.Length > maxLength)
+    {
+        value = value.Substring(0, maxLength) + "...";
+    }
+
+    @value;
+}
+
 <h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Index", "Boardgames", FormMethod.Get))
@@ -67,34 +77,38 @@
     </div>
 }
 
-@foreach (var item in Model)
-{
-    <div class="card col-sm-4">
-        <img style="height: 300px;" class="card-img-top img-responsive" src="@Html.DisplayFor(modelItem => item.ThumbnailURL)" alt="Card image cap">
+<p>@Model.Count() results</p>
 
-        <div class="card-body">
-            <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
-            <h6 class="card-subtitle mb-2 text-muted"> @Html.DisplayFor(modelItem => item.Category)</h6>
-            <p class="card-text">
-                @Html.DisplayFor(modelItem => item.Description)
-            </p>
+<div class="row" style="display:flex;flex-wrap:wrap;margin-top:30px;">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4" style="padding-bottom:30px;">
+            <div class="card" style="height:100%;">
+                <img class="card-img-top card-image-300px" src="@Html.DisplayFor(modelItem => item.ThumbnailURL)" alt="@item.Name">
 
-            <table class="table">
-                <tr>
-                    <td>
-                        <span class="glyphicon glyphicon-user"></span> @Html.DisplayFor(modelItem => item.MinPlayers) - @Html.DisplayFor(modelItem => item.MaxPlayers)
-                    </td>
-                    <td>
-                        <span class="glyphicon glyphicon-time"></span> @Html.DisplayFor(modelItem => item.MinPlayTime) - @Html.DisplayFor(modelItem => item.MaxPlayTime)
-                    </td>
-                    <td>
-                        <span class="glyphicon glyphicon-education"></span> @Html.DisplayFor(modelItem => item.MinAge)+
-                    </td>
-                </tr>
-            </table>
+                <div class="card-body">
+                    <h4 class="card-title"> @Html.DisplayFor(modelItem => item.Name)</h4>
+                    <p class="label label-default"> @Html.DisplayFor(modelItem => item.Category)</p>
+                    <p class="card-text" style="margin-top:0.75rem;">
+                        @Truncate(WebUtility.HtmlDecode(item.Description), 300)
+                    </p>
+
+                    <div class="card-details">
+                        <div>
+                            <span class="glyphicon glyphicon-user"></span>
+                            @Html.DisplayFor(modelItem => item.MinPlayers) - @Html.DisplayFor(modelItem => item.MaxPlayers)
+                        </div>
+                        <div>
+                            <span class="glyphicon glyphicon-time"></span>
+                            @Html.DisplayFor(modelItem => item.MinPlayTime) - @Html.DisplayFor(modelItem => item.MaxPlayTime)
+                        </div>
+                        <div>
+                            <span class="glyphicon glyphicon-education"></span>
+                            @Html.DisplayFor(modelItem => item.MinAge)+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <br />
-    </div>
-
-
-}
+    }
+</div>
