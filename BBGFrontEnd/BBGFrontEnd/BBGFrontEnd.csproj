@@ -241,8 +241,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BGGConnectorLib\BGGConnectorLib.csproj">
-      <Project>{5d3091eb-7d33-4d69-ab48-90b0bae523ba}</Project>
+    <ProjectReference Include="..\..\vergelijkingssite-bordspellen\BGGConnectorLib\BGGConnectorLib.csproj">
+      <Project>{65c1b280-3b9d-4f2f-ab92-cafcbc03a2d0}</Project>
       <Name>BGGConnectorLib</Name>
     </ProjectReference>
   </ItemGroup>
